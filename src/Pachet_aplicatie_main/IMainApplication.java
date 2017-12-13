@@ -1,6 +1,8 @@
 package Pachet_aplicatie_main;
 import Pachet_aplicatie_data.GameHelperPosition;
 import Pachet_aplicatie_data.GameHelperSounds;
+import Pachet_aplicatie_nivele.ConfigAPP;
+import Pachet_aplicatie_nivele.NivelFactory;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -25,7 +27,8 @@ import javafx.util.Duration;
 public class IMainApplication extends Application{
 	//EXAMEN 25 (2018)
 	static Button btnYellow,startGame,infoGame,settingGame;
-	Scene scene;
+	Scene scene = NivelFactory.returnLevel01();
+	ConfigAPP configAPPScene;
 	Color c1;
 	Boolean win = false;
 	double i = 1;
@@ -58,7 +61,12 @@ public class IMainApplication extends Application{
 		infoGame.setStyle("-fx-color:"+themeColor+"; -fx-border:none;");
 		infoGame.setOnAction(e -> GameHelperSounds.onClickSound());
 		settingGame.setStyle("-fx-color:"+themeColor+"; -fx-border:none;");
-		settingGame.setOnAction(e -> GameHelperSounds.onClickSound());
+		settingGame.setOnAction(e -> 
+		{
+			GameHelperSounds.onClickSound();
+			primaryStage.setScene(configAPPScene);
+		}
+			);
 		
 		settingGame.setLayoutX(263);
 		settingGame.setLayoutY(225);
@@ -76,62 +84,22 @@ public class IMainApplication extends Application{
         root.getChildren().addAll(canvas,startGame,settingGame,infoGame);
 		Scene sceneIntro = new Scene(root, 800 ,400,Paint.valueOf(themeColor));
 
-		//Scena 2 level 1
-		btnYellow = new Button();
-		btnYellow.setText("+ more "+themeColor+"+");
-		btnYellow.setAlignment(Pos.CENTER);
-		btnYellow.setLayoutX(50);
-		btnYellow.setLayoutY(50);
-		final Group rootGr = new Group(btnYellow);
-		scene = new Scene(rootGr, 800 ,400);
-
-		//button.setOnAction(eventsAcitons);
-		btnYellow.setOnAction(e -> {
-			GameHelperSounds.onClickSound();
-			
-			i = i -0.15;
-			System.out.println(i);
-			if(i -0.15<0) {
-				System.out.println("nu");
-				Text txt = new Text();
-				txt.setText("You win");
-				txt.setLayoutX(100);
-				txt.setLayoutY(145);
-				rootGr.getChildren().addAll(txt);
-				win=true;
-				fiveSecondsWonder.stop();
-				try {
-					GameHelperSounds.onWin();
-				}catch(MediaException mex) {
-					System.out.println("RezolvarePosibila: Verifica daca formatele la fisierele mp3/wav/ sunt bune si apoi verifica si path-ul la fiecare");
-				}
-				btnYellow.setDisable(true);
-			}else {
-				
-				System.out.println("da");
-				c1 = new Color(1,1,i,0.8);
-				scene.setFill(c1);
-				
-				
-			}
-		});
+		//Scena 3 Config
+		Group root2 = new Group();
+		Canvas canvas2 =addPanel1Intro(themeColor);
+		root2.getChildren().addAll(canvas2);
+		configAPPScene = new ConfigAPP(root2);
+		
+		
+		//Scena 4 Info
+		
+		
+	
+		
 		
 		GameHelperSounds.playBackgroundSound();
 
-		fiveSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
-		    @Override
-		    public void handle(ActionEvent event) {
-		        System.out.println("this is called every 1 seconds on UI thread");
-		        if(i+ 0.10 >0 && (i + 0.10)<1 && win==false) {
-		        i = i + 0.10;
-		        c1 = new Color(1,1,i,0.8);
-				scene.setFill(c1);
-		        }
-		        
-		    }
-		}));
-		fiveSecondsWonder.setCycleCount(Timeline.INDEFINITE);
-		fiveSecondsWonder.play();
+		
 		
 		
 		//-- finale
