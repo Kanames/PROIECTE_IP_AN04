@@ -9,17 +9,16 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Paint;
 
-public class IntroAPP extends Scene{
-
+public class Build_IntroAPP extends Scena{
 
 	static ContextAplicatie APP_INFO      = INVOKEAppProperties.contextAplicatieProcessed();
 	private static String NUME_APP        = APP_INFO.getNumeApp();
 	private static String THEME_COLOR_APP = APP_INFO.getThemeColor();
 	private static String ICON_URL_APP    = APP_INFO.getIconURL();
-	
+
 	private Button startGame,infoGame,settingGame;
 
-	public IntroAPP(Parent root, double width, double height, Paint fill) {
+	public Build_IntroAPP(Parent root, double width, double height, Paint fill) {
 		super(root, width, height, fill);
 		
 		startGame = new Button();
@@ -42,5 +41,7 @@ public class IntroAPP extends Scene{
 		infoGame.setGraphic(new ImageView("file:C:\\Users\\Stefan\\git\\PROIECTE_IP_AN04\\src\\Pachet_aplicatie_resurse\\btnInfo.png"));
 		settingGame.setGraphic(new ImageView("file:C:\\Users\\Stefan\\git\\PROIECTE_IP_AN04\\src\\Pachet_aplicatie_resurse\\btnConfig.png"));	
 		
-	}	
+	}
+
+	
 }

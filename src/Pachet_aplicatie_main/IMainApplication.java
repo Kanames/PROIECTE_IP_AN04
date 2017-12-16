@@ -2,8 +2,8 @@ package Pachet_aplicatie_main;
 import Pachet_aplicatie_data.GameHelper;
 import Pachet_aplicatie_data.GameHelperPosition;
 import Pachet_aplicatie_data.GameHelperSounds;
-import Pachet_aplicatie_nivele.ConfigAPP;
-import Pachet_aplicatie_nivele.IntroAPP;
+import Pachet_aplicatie_nivele.Build_ConfigAPP;
+import Pachet_aplicatie_nivele.Build_IntroAPP;
 import Pachet_aplicatie_nivele.NivelFactory;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -84,13 +84,13 @@ public class IMainApplication extends Application{
         Canvas canvas =addPanel1Intro(THEME_COLOR_APP);
         root.getChildren().addAll(canvas);
         root.getChildren().addAll(startGame,settingGame,infoGame);
-		Scene sceneIntro = new IntroAPP(root, 800 ,400,Paint.valueOf(THEME_COLOR_APP));
+		Scene sceneIntro = new Build_IntroAPP(root, 800 ,400,Paint.valueOf(THEME_COLOR_APP));
 
 		//Scena 3 Config
 		Group root2 = new Group();
 		Canvas canvas2 =addPanel1Intro(THEME_COLOR_APP);
 		root2.getChildren().addAll(canvas2);
-		configAPPScene = new ConfigAPP(root2);
+		configAPPScene = new Build_ConfigAPP(root2);
 		
 		
 		//Scena 4 Info

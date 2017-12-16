@@ -7,10 +7,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.media.MediaException;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
@@ -61,6 +63,22 @@ public class NivelFactory {
 		
 		decriseYellow(scene);
 		return scene;
+	}
+	
+	
+	public static Scene creazaScena(String tipScena,Parent parent,double width, double height, Paint fill) {
+		Scene tipScenaDorit = null;
+		
+		if(tipScena.equalsIgnoreCase("Config")) {
+			tipScenaDorit = new Build_ConfigAPP( parent, width,  height, fill);
+		}
+		else if(tipScena.equalsIgnoreCase("Info")) {
+			tipScenaDorit = new Build_InfoAPP( parent, width,  height, fill);
+		}
+		else if(tipScena.equalsIgnoreCase("Intro")) {
+			tipScenaDorit = new Build_IntroAPP( parent, width,  height,  fill);
+		}
+		return tipScenaDorit;
 	}
 	
 	private static void decriseYellow(Scene scene) {
