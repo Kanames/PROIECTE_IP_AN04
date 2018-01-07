@@ -1,12 +1,13 @@
 package Pachet_aplicatie_main;
 import Pachet_aplicatie_data.GameHelperSounds;
+import Pachet_aplicatie_nivele.Build_InfoAPP;
 import Pachet_aplicatie_nivele.NivelFactory;
-import javafx.animation.Timeline;
+import Pachet_aplicatie_nivele.SituatieJocObserver;
+import Pachet_aplicatie_nivele.SituatieJocSubject;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
@@ -17,6 +18,7 @@ public class IMainApplication extends Application{
 	private static String NUME_APP        = APP_INFO.getNumeApp();
 	private static String THEME_COLOR_APP = APP_INFO.getThemeColor();
 	private static String ICON_URL_APP    = APP_INFO.getIconURL();
+	public static SituatieJocSubject situatieJocS;
 	
 	
 	//EXAMEN 25 (2018)
@@ -35,27 +37,23 @@ public class IMainApplication extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		System.out.println("<<< IN IMainApplication.start() >>>");
 		
+		situatieJocS = new SituatieJocSubject();
+		Build_InfoAPP.situatieJocO = new SituatieJocObserver(situatieJocS);
+		situatieJocS.register(Build_InfoAPP.situatieJocO);
+		
 		primaryStage.setTitle(NUME_APP);
 		
 		//Scena 1 Intro applicatie 
 		Scene sceneIntro = NivelFactory.creazaScena("Intro", null, 800, 400, Paint.valueOf(THEME_COLOR_APP),primaryStage);
-		 
-		
-		
-		//Scena 3 Config
-//		Group root2 = new Group();
-//		Canvas canvas2 =addPanel1Intro(THEME_COLOR_APP);
-//		root2.getChildren().addAll(canvas2);
-//		configAPPScene = new Build_ConfigAPP(root2);
-		
-		
-		//Scena 4 Info
 		GameHelperSounds.playBackgroundSound();
 
+		
+		
 		//-- finale
 		primaryStage.getIcons().add(new Image(ICON_URL_APP));
 		primaryStage.setScene(sceneIntro);
 		primaryStage.show();
+		
 		
 		System.out.println("<<< OUT IMainApplication.start() >>>");
 	}

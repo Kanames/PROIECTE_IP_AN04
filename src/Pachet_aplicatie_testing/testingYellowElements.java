@@ -1,8 +1,10 @@
-package Pachet_aplicatie_main;
+package Pachet_aplicatie_testing;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
+
+import Pachet_aplicatie_main.ContextAplicatie;
 
 class testingYellowElements {
 	// Categorie Sabloane creationale - sablon SINGLETON

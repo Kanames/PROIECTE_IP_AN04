@@ -1,11 +1,11 @@
 package Pachet_aplicatie_nivele;
 
 import Pachet_aplicatie_data.GameHelperSounds;
+import Pachet_aplicatie_main.IMainApplication;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -15,7 +15,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.media.MediaException;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -25,6 +24,7 @@ public class Build_Nivel01  extends Scena{
 	static Boolean win = false;	
 	static Timeline fiveSecondsWonder;
 	static Color colorBackgroundLvl01;
+
 	
 	public Build_Nivel01(Parent root, double width, double height, Paint fill) {
 		super(root, width, height, fill);
@@ -33,6 +33,7 @@ public class Build_Nivel01  extends Scena{
 	
 	public static Scene setting(Pane root, double width, double height, Paint fill, Stage primaryStage) {
 		System.out.println("<<< IN Build_Nivel01() >>>");
+
 		Button btnYellow = new Button();
 		//btn IMG este 170x170
 		btnYellow.setGraphic(new ImageView("file:C:\\Users\\Stefan\\git\\PROIECTE_IP_AN04\\src\\Pachet_aplicatie_resurse\\lvl01a.png"));	
@@ -55,6 +56,11 @@ public class Build_Nivel01  extends Scena{
 				}
 				btnYellow.setDisable(true);
 				i = 1;
+				
+				System.out.println("<<<<<<<<<<<<<ObserverPattern>>>>>>>>>>>>>");
+				IMainApplication.situatieJocS.notifyObserver();
+				System.out.println("<<<<<<<<<<<<<ObserverPattern>>>>>>>>>>>>>");
+				
 				primaryStage.setScene(NivelFactory.creazaScena("Intro", null, width, height, fill, primaryStage));
 				
 			}else {

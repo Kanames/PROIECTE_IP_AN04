@@ -21,7 +21,7 @@ public abstract class Scena extends Scene{
 		super(root, width, height, fill);
 	}
 
-	protected static Canvas addCanvasYellowBackground(String themeColorTxt) {
+	protected static Canvas addCanvasYellowBackground(String themeColorTxt,Boolean wantedText) {
 		System.out.println("<<< IN Scena--addCanvasYellowBackground() >>>");
 		System.out.println("--parametriIn-- ");
 		System.out.println("themeColorTxt: "+themeColorTxt);
@@ -32,14 +32,28 @@ public abstract class Scena extends Scene{
 	    gc.setFill(Color.YELLOW);
 	    gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
+	    boolean wantedMiddleText = wantedText;
+		if(wantedMiddleText  == true) {
 	    //--MiddleText
 	    gc.setFont(new Font("Arial", 50));
 	    gc.setFill(Color.BLACK);
 	    gc.fillText(GameHelper.implodString(themeColorTxt), GameHelperPosition.calcYNameApp(800,GameHelper.implodString(themeColorTxt)), GameHelperPosition.calcXNameApp(400));
-
+	    }
 	    
 	    System.out.println("<<< OUT Scena--addCanvasYellowBackground() >>>");
 	    return canvas;
+	}
+
+	public static Canvas modifConvasInfo(Canvas canvasBack) {
+		GraphicsContext gc = canvasBack.getGraphicsContext2D();
+		
+		return canvasBack;
+	}
+
+	public static Canvas modifConvasConfig(Canvas canvasBack) {
+		GraphicsContext gc = canvasBack.getGraphicsContext2D();
+		
+		return canvasBack;
 	}
 	
 }

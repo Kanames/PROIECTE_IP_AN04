@@ -1,7 +1,5 @@
 package Pachet_aplicatie_main;
 
-
-
 public class ContextAplicatie {
 	private String  NumeApp;
 	private Long  	lvlNumbers;
@@ -11,7 +9,7 @@ public class ContextAplicatie {
 	private String  ThemeColor;
 	private static ContextAplicatie instance = null;
 
-	protected ContextAplicatie() {
+	public ContextAplicatie() {
 		// Exists only to defeat instantiation.
 	}
 

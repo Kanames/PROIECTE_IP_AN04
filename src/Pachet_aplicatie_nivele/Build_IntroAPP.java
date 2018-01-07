@@ -50,20 +50,26 @@ public class Build_IntroAPP extends Scena{
 		startGame.setStyle("-fx-color:"+THEME_COLOR_APP+"; -fx-border:none;");
 		startGame.setOnAction(e -> {
 			GameHelperSounds.onClickSound();
-				NivelFactory.creazaScena("Level01", null,  width,  height,  fill,  primaryStage);
+			NivelFactory.creazaScena("Level01", null,  width,  height,  fill,  primaryStage);
 			});
 		startGame.setLayoutX(360);
 		startGame.setLayoutY(225);
 		
 		infoGame = new Button();
 		infoGame.setStyle("-fx-color:"+THEME_COLOR_APP+"; -fx-border:none;");
-		infoGame.setOnAction(e -> GameHelperSounds.onClickSound());
+		infoGame.setOnAction(e -> {
+			GameHelperSounds.onClickSound();
+			NivelFactory.creazaScena("Info", null,  width,  height,  fill,  primaryStage);		
+			});
 		infoGame.setLayoutX(455);
 		infoGame.setLayoutY(225);
 		
 		settingGame = new Button();
 		settingGame.setStyle("-fx-color:"+THEME_COLOR_APP+"; -fx-border:none;");
-		settingGame.setOnAction(e -> GameHelperSounds.onClickSound());
+		settingGame.setOnAction(e -> {
+				GameHelperSounds.onClickSound();
+				NivelFactory.creazaScena("Config", null,  width,  height,  fill,  primaryStage);		
+			});
 		settingGame.setLayoutX(263);
 		settingGame.setLayoutY(225);
 		
@@ -71,7 +77,7 @@ public class Build_IntroAPP extends Scena{
 		infoGame.setGraphic(new ImageView("file:C:\\Users\\Stefan\\git\\PROIECTE_IP_AN04\\src\\Pachet_aplicatie_resurse\\btnInfo.png"));
 		settingGame.setGraphic(new ImageView("file:C:\\Users\\Stefan\\git\\PROIECTE_IP_AN04\\src\\Pachet_aplicatie_resurse\\btnConfig.png"));	
 		
-		Canvas canvas= Scena.addCanvasYellowBackground(THEME_COLOR_APP);
+		Canvas canvas= Scena.addCanvasYellowBackground(THEME_COLOR_APP,true);
 		panelFinal.getChildren().add(canvas);
 		panelFinal.getChildren().add(infoGame);
 		panelFinal.getChildren().add(settingGame);
@@ -82,6 +88,7 @@ public class Build_IntroAPP extends Scena{
 		System.out.println("<<< OUT Build_IntroAPP() >>>");
 		
 		Scena scenaFinala =  new Build_IntroAPP(panelFinal,  width,  height,  fill);
+		primaryStage.setScene(scenaFinala);
 		return scenaFinala;
 	}
 
