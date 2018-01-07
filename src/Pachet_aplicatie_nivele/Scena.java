@@ -55,5 +55,19 @@ public abstract class Scena extends Scene{
 		
 		return canvasBack;
 	}
+
+	public static Canvas addCanvasYellowBackgroundNivel02(String themeColorTxt, boolean b,int length,int height) {
+		System.out.println("<<< IN Scena--addCanvasYellowBackground() >>>");
+		System.out.println("--parametriIn-- ");
+		System.out.println("themeColorTxt: "+themeColorTxt);
+		Canvas canvas = new Canvas(length, height);
+		GraphicsContext gc = canvas.getGraphicsContext2D();
+		
+		  //--Background
+	    gc.setFill(Color.YELLOW);
+	    gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
+	    
+		return canvas;
+	}
 	
 }

@@ -61,7 +61,7 @@ public class Build_Nivel01  extends Scena{
 				IMainApplication.situatieJocS.notifyObserver();
 				System.out.println("<<<<<<<<<<<<<ObserverPattern>>>>>>>>>>>>>");
 				
-				primaryStage.setScene(NivelFactory.creazaScena("Intro", null, width, height, fill, primaryStage));
+				primaryStage.setScene(NivelFactory.creazaScena("Level02", null, width, height, fill, primaryStage));
 				
 			}else {
 				

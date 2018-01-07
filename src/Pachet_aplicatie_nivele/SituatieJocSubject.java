@@ -37,7 +37,7 @@ public class SituatieJocSubject implements ISubject{
 		System.out.println("----"+nrCastiguri);
 		System.out.println("----"+numeNivel);
 		for(SituatieJocObserver observer : observers){
-			observer.update(nrCastiguri,numeNivel);
+			observer.update(nrCastiguri == null ? 0 : nrCastiguri,numeNivel);
 		}
 	}
 	

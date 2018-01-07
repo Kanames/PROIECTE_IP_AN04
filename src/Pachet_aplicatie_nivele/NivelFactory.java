@@ -33,15 +33,15 @@ public class NivelFactory {
 		else if(tipScena.equalsIgnoreCase("Level01")) {
 			System.out.println("Intrat in IF case good(Level01)");
 			IMainApplication.situatieJocS.setNumeNivel("Nivel 01");
-			IMainApplication.situatieJocS.setNrCastiguri(++nrCastiguri);
+			
 			tipScenaDorit = Build_Nivel01.setting(root, width,  height,fill,primaryStage);
 			System.out.println("iesit din IF(Level01)");
 		}
 		else if(tipScena.equalsIgnoreCase("Level02")) {
 			System.out.println("Intrat in IF case good(Level02)");
 			IMainApplication.situatieJocS.setNumeNivel("Nivel 02");
-			
-
+			IMainApplication.situatieJocS.setNrCastiguri(++nrCastiguri);
+			tipScenaDorit = Build_Nivel02.setting(root, width,  height,fill,primaryStage);
 			System.out.println("iesit din IF(Level02)");
 		}
 		else if(tipScena.equalsIgnoreCase("Level03")) {
