@@ -14,30 +14,30 @@ import javafx.stage.Stage;
 
 public class IMainApplication extends Application{
 	
-	static ContextAplicatie APP_INFO      = INVOKEAppProperties.contextAplicatieProcessed();
+	static ContextAplicatie APP_INFO      = INVOKEAppProperties.contextAplicatieProcessed(); \\Pattern:SINGLETON
 	private static String NUME_APP        = APP_INFO.getNumeApp();
 	private static String THEME_COLOR_APP = APP_INFO.getThemeColor();
 	private static String ICON_URL_APP    = APP_INFO.getIconURL();
 	public static SituatieJocSubject situatieJocS;
 	
-	
 	//EXAMEN 25 (2018)
-	static Button btnYellow,startGame,infoGame,settingGame;
-	Scene configAPPScene;
-	Color c1;
-	Boolean win = false;
-	double i = 1;
+	//static Button btnYellow,startGame,infoGame,settingGame;
+	//Scene configAPPScene;	//? folosesc ?
+	//Color c1;		//? folosesc ?
+	//Boolean win = false;	//? folosesc ?
+	//double i = 1;		//? folosesc ?
 	
 	public static void main(String[] args) {
 		launch(args);
 	}
-	
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		System.out.println("<<< IN IMainApplication.start() >>>");
-		
 		situatieJocS = new SituatieJocSubject();
+		 \\prezinta: ultimul nivel jucat, de cate ori sa terminat jocul per asamblu, numele user-ului.
+		 \\Pattern:OBSERVER
+			 
 		Build_InfoAPP.situatieJocO = new SituatieJocObserver(situatieJocS);
 		situatieJocS.register(Build_InfoAPP.situatieJocO);
 		
