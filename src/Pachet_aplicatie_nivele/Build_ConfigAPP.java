@@ -17,10 +17,10 @@ public class Build_ConfigAPP extends Scena{
 	private static Button back;
 	
 	public Build_ConfigAPP(Pane root, double width, double height) {
-		super(root, width, height);
+		super(root);
 	}
 
-	public static Scene setting(Pane root, double width, double height) {
+	public static Scene setting(Pane root) {
 		System.out.println("<<< IN Build_IntroAPP() >>>");
 		System.out.println("--parametriIn-- root: "+root);
 
@@ -34,7 +34,7 @@ public class Build_ConfigAPP extends Scena{
 		back.setStyle("-fx-color:"+THEME_COLOR_APP+"; -fx-border:none;");
 		back.setOnAction(e -> {
 				GameHelperSounds.onClickSound();
-				NivelFactory.creazaScena("Intro", null,  width,  height);
+				NivelFactory.creazaScena("Intro", null);
 			});
 		back.setLayoutX(20);
 		back.setLayoutY(20);
@@ -43,7 +43,7 @@ public class Build_ConfigAPP extends Scena{
 		panelFinal.getChildren().add(canvasProcessed);
 		panelFinal.getChildren().add(back);
 		
-		Scena scenaFinala =  new Build_IntroAPP(panelFinal,  width,  height);
+		Scena scenaFinala =  new Build_IntroAPP(panelFinal);
 		System.out.println("<<< OUT Build_IntroAPP() >>>");
 		return scenaFinala;
 	}

@@ -5,7 +5,6 @@ import java.io.File;
 import javafx.concurrent.Task;
 import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
-import javafx.scene.media.MediaException;
 import javafx.scene.media.MediaPlayer;
 
 public class GameHelperSounds {

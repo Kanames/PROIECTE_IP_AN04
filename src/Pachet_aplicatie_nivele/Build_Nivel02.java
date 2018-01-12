@@ -19,9 +19,10 @@ import javafx.stage.Stage;
 public class Build_Nivel02  extends Scena{
 	
 	static ContextAplicatie APP_INFO      = INVOKEAppProperties.contextAplicatieProcessed();
-	private static String NUME_APP        = APP_INFO.getNumeApp();
 	private static String THEME_COLOR_APP = APP_INFO.getThemeColor();
-	private static String ICON_URL_APP    = APP_INFO.getIconURL();
+	private static int NR_OF_ROWS         = APP_INFO.getNrRanduriNivel02(); 
+	private static int NR_OF_BTNS_PER_ROW = APP_INFO.getNrButoanePerRandNivel02();
+	
 	public static int nrOfBoxexCheck = 0;
 	public static Canvas canvas;
 	static double i = 1;
@@ -30,11 +31,11 @@ public class Build_Nivel02  extends Scena{
 	static Color colorBackgroundLvl01;
 	public static Pane panelFinal;
 	
-	public Build_Nivel02(Parent root, double width, double height) {
-		super(root, width, height);
+	public Build_Nivel02(Parent root) {
+		super(root);
 		// TODO Auto-generated constructor stub
 	}
-	public static Scene setting(Pane root, double width, double height) {
+	public static Scene setting(Pane root) {
 		System.out.println("<<< IN Build_Nivel02() >>>");
 
 		if(root == null) {
@@ -46,8 +47,8 @@ public class Build_Nivel02  extends Scena{
 		
 		
 		ButoaneNivel02 btnGenerator = new ButoaneNivel02();
-		btnGenerator.setNumberOfRows(2);
-		btnGenerator.setNumberButtonsPerRow(4);
+		btnGenerator.setNumberOfRows(NR_OF_ROWS);
+		btnGenerator.setNumberButtonsPerRow(NR_OF_BTNS_PER_ROW);
 		
 		IteratorButoane iterator = btnGenerator.getIterator(panelFinal);
 		
@@ -71,7 +72,7 @@ public class Build_Nivel02  extends Scena{
 			
 			GameHelperSounds.onWin();
 			nrOfBoxexCheck = 0;
-			NivelFactory.creazaScena("Intro", null, width, height);
+			NivelFactory.creazaScena("Intro", null);
 			
 			
 		}

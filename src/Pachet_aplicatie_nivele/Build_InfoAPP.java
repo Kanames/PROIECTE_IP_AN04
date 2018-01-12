@@ -28,11 +28,8 @@ public class Build_InfoAPP extends Scena{
 		super(root);
 	}
 	
-	public Build_InfoAPP(Pane root, double width, double height) {
-		super(root, width, height);
-	}
 
-	public static Scene setting(Pane root, double width, double height) {
+	public static Scene setting(Pane root) {
 		System.out.println("<<< IN Build_IntroAPP() >>>");
 		System.out.println("--parametriIn-- root:"+root);
 
@@ -62,7 +59,7 @@ public class Build_InfoAPP extends Scena{
 		back.setStyle("-fx-color:"+THEME_COLOR_APP+"; -fx-border:none;");
 		back.setOnAction(e -> {
 				GameHelperSounds.onClickSound();
-				NivelFactory.creazaScena("Intro", null,  width,  height);
+				NivelFactory.creazaScena("Intro", null);
 			});
 		back.setLayoutX(20);
 		back.setLayoutY(20);
@@ -77,7 +74,7 @@ public class Build_InfoAPP extends Scena{
 		panelFinal.getChildren().add(numeUser);
 		
 
-		Scena scenaFinala =  new Build_IntroAPP(panelFinal,  width,  height);
+		Scena scenaFinala =  new Build_IntroAPP(panelFinal);
 		System.out.println("<<< OUT Build_IntroAPP() >>>");
 		return scenaFinala;
 	}

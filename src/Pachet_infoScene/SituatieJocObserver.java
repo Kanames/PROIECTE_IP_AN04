@@ -1,9 +1,6 @@
 package Pachet_infoScene;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
-import java.util.List;
 
 public class SituatieJocObserver implements IObserver {
 	private String pcUser  		= System.getProperty("user.name");

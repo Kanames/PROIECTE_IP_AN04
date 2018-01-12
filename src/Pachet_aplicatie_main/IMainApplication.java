@@ -6,7 +6,6 @@ import Pachet_infoScene.SituatieJocObserver;
 import Pachet_infoScene.SituatieJocSubject;
 import javafx.application.Application;
 import javafx.scene.image.Image;
-import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
 public class IMainApplication extends Application{
@@ -36,7 +35,7 @@ public class IMainApplication extends Application{
 		//prezinta: ultimul nivel jucat, de cate ori sa terminat jocul per asamblu, numele user-ului.
 
 		//Scena 1 "Intro" applicatie 
-		NivelFactory.creazaScena("Intro", null, 800, 400);
+		NivelFactory.creazaScena("Intro", null);
 		GameHelperSounds.playBackgroundSound();
 		
 		primaryStageAPP.show();

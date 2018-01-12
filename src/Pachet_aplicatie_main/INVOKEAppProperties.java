@@ -1,13 +1,28 @@
 package Pachet_aplicatie_main;
 
+import java.util.ArrayList;
+
+import Pachet_aplicatie_data.GameHelper;
+
 public class INVOKEAppProperties {
 	public static String MediaException_01 = "RezolvarePosibila: Verifica daca formatele la fisierele mp3/wav/ sunt bune si apoi verifica si path-ul la fiecare";
+	public static int COLOR_COMPONENT_R;
+	public static int COLOR_COMPONENT_G;
+	public static int COLOR_COMPONENT_B;
+	
 	public static ContextAplicatie contextAplicatieProcessed() {
 		ContextAplicatie appInfo = ContextAplicatie.getInstance();
 		appInfo.setNumeApp("Yellow");
 		appInfo.setIconURL("/Pachet_aplicatie_resurse/yellowIcon.png");
 		appInfo.setThemeColor("YELLOW");
 		
+		ArrayList<String> rgb = GameHelper.creatingRGBfromWord(appInfo.getThemeColor());
+		COLOR_COMPONENT_R = Integer.valueOf((String) rgb.get(0));
+		COLOR_COMPONENT_G = Integer.valueOf((String) rgb.get(1));
+		COLOR_COMPONENT_B = Integer.valueOf((String) rgb.get(2));
+		
+		appInfo.setLatimeAplicatie(800);
+		appInfo.setLungimeAplicatie(400);
 		// -- Nivel02 INFORMATIONS
 		appInfo.setNrButoanePerRandNivel02(4);
 		appInfo.setNrRanduriNivel02(2);

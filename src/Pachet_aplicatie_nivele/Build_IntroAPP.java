@@ -11,11 +11,10 @@ import javafx.scene.layout.Pane;
 
 public class Build_IntroAPP extends Scena{
 
-	public Build_IntroAPP(Parent root, double width, double height) {
-		super(root, width, height);
+	public Build_IntroAPP(Parent root) {
+		super(root);
 		// TODO Auto-generated constructor stub
 	}
-
 	static ContextAplicatie APP_INFO      = INVOKEAppProperties.contextAplicatieProcessed();
 	private static String THEME_COLOR_APP = APP_INFO.getThemeColor();
 
@@ -24,12 +23,11 @@ public class Build_IntroAPP extends Scena{
 	private static Button settingGame;
 	private static Pane panelFinal;
 
-	public static Scena setting(Pane root, double width, double height) {
+	public static Scena setting(Pane root) {
 		System.out.println("<<< IN Build_IntroAPP() >>>");
 		System.out.println("--parametriIn-- ");
 		System.out.println("root "+root);
-		System.out.println("width "+width);
-		System.out.println("height "+height);
+
 		
 		if(root == null) {
 			panelFinal = new Pane();
@@ -41,7 +39,7 @@ public class Build_IntroAPP extends Scena{
 		startGame.setStyle("-fx-color:"+THEME_COLOR_APP+"; -fx-border:none;");
 		startGame.setOnAction(e -> {
 			GameHelperSounds.onClickSound();
-			NivelFactory.creazaScena("Level01", null,  width,  height);
+			NivelFactory.creazaScena("Level01", null);
 			});
 		startGame.setLayoutX(360);
 		startGame.setLayoutY(225);
@@ -50,7 +48,7 @@ public class Build_IntroAPP extends Scena{
 		infoGame.setStyle("-fx-color:"+THEME_COLOR_APP+"; -fx-border:none;");
 		infoGame.setOnAction(e -> {
 			GameHelperSounds.onClickSound();
-			NivelFactory.creazaScena("Info", null,  width,  height);		
+			NivelFactory.creazaScena("Info", null);		
 			});
 		infoGame.setLayoutX(455);
 		infoGame.setLayoutY(225);
@@ -59,7 +57,7 @@ public class Build_IntroAPP extends Scena{
 		settingGame.setStyle("-fx-color:"+THEME_COLOR_APP+"; -fx-border:none;");
 		settingGame.setOnAction(e -> {
 				GameHelperSounds.onClickSound();
-				NivelFactory.creazaScena("Config", null,  width,  height);		
+				NivelFactory.creazaScena("Config", null);		
 			});
 		settingGame.setLayoutX(263);
 		settingGame.setLayoutY(225);
@@ -78,7 +76,7 @@ public class Build_IntroAPP extends Scena{
 		System.out.println("root "+panelFinal.getChildren());
 		System.out.println("<<< OUT Build_IntroAPP() >>>");
 		
-		Scena scenaFinala =  new Build_IntroAPP(panelFinal,  width,  height);
+		Scena scenaFinala =  new Build_IntroAPP(panelFinal);
 		return scenaFinala;
 	}
 

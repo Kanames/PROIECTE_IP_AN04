@@ -7,6 +7,8 @@ public class ContextAplicatie {
 	private String  backgroundSound1;
 	private String  backgroundSound2;
 	private String  ThemeColor;
+	private int  latimeAplicatie;
+	private int  lungimeAplicatie;
 	private static ContextAplicatie instance = null;
 
 	private int nrButoanePerRandNivel02;
@@ -82,6 +84,22 @@ public class ContextAplicatie {
 
 	public void setNrButoanePerRandNivel02(int nrButoanePerRandNivel02) {
 		this.nrButoanePerRandNivel02 = nrButoanePerRandNivel02;
+	}
+
+	public int getLatimeAplicatie() {
+		return latimeAplicatie;
+	}
+
+	public void setLatimeAplicatie(int latimeAplicatie) {
+		this.latimeAplicatie = latimeAplicatie;
+	}
+
+	public int getLungimeAplicatie() {
+		return lungimeAplicatie;
+	}
+
+	public void setLungimeAplicatie(int lungimeAplicatie) {
+		this.lungimeAplicatie = lungimeAplicatie;
 	}
 
 	

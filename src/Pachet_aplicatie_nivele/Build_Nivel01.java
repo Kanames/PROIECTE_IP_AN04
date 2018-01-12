@@ -19,20 +19,19 @@ import javafx.util.Duration;
 
 public class Build_Nivel01  extends Scena{
 
-	static double i = 1;
+	static double yellowishUpper = 1;
 	static Boolean win = false;	
 	static Timeline fiveSecondsWonder;
 	static Color colorBackgroundLvl01;
 
 	
-	public Build_Nivel01(Parent root, double width, double height) {
-		super(root, width, height);
+	public Build_Nivel01(Parent root) {
+		super(root);
 		// TODO Auto-generated constructor stub
 	}
 	
-	public static Scene setting(Pane root, double width, double height) {
+	public static Scene setting(Pane root) {
 		System.out.println("<<< IN Build_Nivel01() >>>");
-
 		Button btnYellow = new Button();
 		//btn IMG este 170x170
 		btnYellow.setGraphic(new ImageView("/Pachet_aplicatie_resurse/lvl01a.png"));	
@@ -43,9 +42,9 @@ public class Build_Nivel01  extends Scena{
 		Scene scene = new Scene(rootGr, 800 ,400);
 		btnYellow.setOnAction(e -> {
 			GameHelperSounds.onClickSound();
-			i = i -0.15;
-			System.out.println(i);
-			if(i -0.15<0) {
+			yellowishUpper = yellowishUpper -0.15;
+			System.out.println("Yellower on click-> "+yellowishUpper);
+			if(yellowishUpper -0.15<0) {
 				win=true;
 				fiveSecondsWonder.stop();
 				try {
@@ -54,25 +53,21 @@ public class Build_Nivel01  extends Scena{
 					System.out.println(INVOKEAppProperties.MediaException_01);
 				}
 				btnYellow.setDisable(true);
-				i = 1;
-				
+				yellowishUpper = 1;
 				System.out.println("<<<<<<<<<<<<<ObserverPattern>>>>>>>>>>>>>");
 				IMainApplication.situatieJocS.notifyObserver();
 				System.out.println("<<<<<<<<<<<<<ObserverPattern>>>>>>>>>>>>>");
-				
-				NivelFactory.creazaScena("Level02", null, width, height);
+				NivelFactory.creazaScena("Level02", null);
 				
 			}else {
-				
-				System.out.println("da");
-				colorBackgroundLvl01 = new Color(1,1,i,0.8);
+				colorBackgroundLvl01 = new Color(1,1,yellowishUpper,0.8);
 				scene.setFill(colorBackgroundLvl01);
 				
 			}
 		});
 		
 		decriseYellow(scene);
-		System.out.println("<<< out Build_Nivel01() >>>");
+		System.out.println("<<< OUT Build_Nivel01() >>>");
 		return scene;
 	}
 	
@@ -81,10 +76,10 @@ public class Build_Nivel01  extends Scena{
 		fiveSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
 		    @Override
 		    public void handle(ActionEvent event) {
-		        System.out.println("this is called every 1 seconds on UI thread");
-		        	if(i+0.20 >0 && (i + 0.20)<1 && win==false) {
-		        		i = i + 0.20;
-		        		colorBackgroundLvl01 = new Color(1,1,i,0.8);
+		        System.out.println("*this is called every 1 seconds on UI thread");
+		        	if(yellowishUpper+0.20 >0 && (yellowishUpper + 0.20)<1 && win==false) {
+		        		yellowishUpper = yellowishUpper + 0.20;
+		        		colorBackgroundLvl01 = new Color(1,1,yellowishUpper,0.8);
 		        		scene.setFill(colorBackgroundLvl01);
 		        	}
 		        
@@ -92,7 +87,7 @@ public class Build_Nivel01  extends Scena{
 		}));
 		fiveSecondsWonder.setCycleCount(Timeline.INDEFINITE);
 		fiveSecondsWonder.play();
-		System.out.println("<<< IN Build_Nivel01.decriseYellow() >>>");
+		System.out.println("<<< OUT Build_Nivel01.decriseYellow() >>>");
 	}
 
 }

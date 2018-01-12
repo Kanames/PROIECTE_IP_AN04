@@ -1,7 +1,5 @@
 package Pachet_infoScene;
 
-import java.util.Observer;
-
 //This interface handles adding, deleting and updating
 //all observers 
 

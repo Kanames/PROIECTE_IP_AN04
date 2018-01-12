@@ -3,10 +3,8 @@ package Pachet_nivel_02;
 import java.util.ArrayList;
 
 import Pachet_aplicatie_data.GameHelper;
-import javafx.scene.Node;
+import Pachet_aplicatie_data.GameHelperPosition;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Paint;
-import javafx.stage.Stage;
 
 public class ButoaneNivel02 implements IButoaneNivel02{
     public static ArrayList<ButtonNivel02Implementare> butoaneNivel02;
@@ -16,7 +14,7 @@ public class ButoaneNivel02 implements IButoaneNivel02{
     public IteratorButoane getIterator(Pane panelFinal){
         butoaneNivel02 = new ArrayList<ButtonNivel02Implementare>();
    
-        ArrayList<String> pozitieXsiY = GameHelper.calcularePozitiNivel02(800,400,rows,btnsPerRow);
+        ArrayList<String> pozitieXsiY = GameHelperPosition.calcularePozitiNivel02(800,400,rows,btnsPerRow);
         System.out.println("pozitieXsiY: "+pozitieXsiY);
 		for(String pozitieXsiYStr : pozitieXsiY){
 			String[] pozXY = pozitieXsiYStr.split("\\s+");

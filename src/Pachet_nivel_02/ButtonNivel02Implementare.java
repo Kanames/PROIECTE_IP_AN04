@@ -8,16 +8,12 @@ import Pachet_aplicatie_nivele.Scena;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Paint;
-import javafx.stage.Stage;
 
 public class ButtonNivel02Implementare extends Button{
 	
 	static ContextAplicatie APP_INFO      = INVOKEAppProperties.contextAplicatieProcessed();
-	private static String NUME_APP        = APP_INFO.getNumeApp();
 	private static String THEME_COLOR_APP = APP_INFO.getThemeColor();
-	private static String ICON_URL_APP    = APP_INFO.getIconURL();
+
 	
 	public ButtonNivel02Implementare(int width,int height,int fillWidth, int fillHeight) {
 		this.setStyle("-fx-color:"+"none"+"; -fx-border:none;");
