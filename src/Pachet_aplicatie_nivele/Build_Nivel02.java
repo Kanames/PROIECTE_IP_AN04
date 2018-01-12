@@ -41,7 +41,12 @@ public class Build_Nivel02  extends Scena{
 	}
 	public static Scene setting(Pane root, double width, double height, Paint fill, Stage primaryStage) {
 		System.out.println("<<< IN Build_Nivel02() >>>");
-
+		//Pattern:ITERATOR
+		IteratorButoane iteratorButoane = new ButoaneNivel02().getIterator(10);
+		for(IteratorButoane iter = iteratorButoane; iter.hasNext();){
+	           String name = iter.next().toString();
+	           System.out.println("Name : " + name);
+	     	}
 
 		if(root == null) {
 			panelFinal = new Pane();
