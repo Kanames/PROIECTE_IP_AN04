@@ -14,8 +14,7 @@ public class GameHelperSounds {
 			@Override
 			protected Object call() throws Exception {
 				int repeatSong = 3;
-				AudioClip audio = new AudioClip(
-						getClass().getResource("../Pachet_aplicatie_resurse/Background (2).mp3").toExternalForm());
+				AudioClip audio = new AudioClip(this.getClass().getResource("/Pachet_aplicatie_resurse/Background (2).mp3").toExternalForm());
 				audio.setVolume(0.8f);
 				audio.setCycleCount(repeatSong);
 				audio.play();
@@ -27,11 +26,9 @@ public class GameHelperSounds {
 	}
 
 	public static void onClickSound() {
-		
 		String musicFile2 = "src/Pachet_aplicatie_resurse/Click2.mp3";
 		//If you are using eclipse, place your text file in the root of the project folder, outside the /src and /bin folders. It should be now accessible via a relative path directly.
 		//If you want to access a file in src folder, you have to append the /src/ prefix before the file path/name
-		
 		Media sound2 = new Media(new File(musicFile2).toURI().toString());
 		MediaPlayer mediaPlayer2 = new MediaPlayer(sound2);
 		mediaPlayer2.play();
@@ -41,11 +38,8 @@ public class GameHelperSounds {
 		final Task task = new Task() {
 			@Override
 			protected Object call() throws Exception {
-
-				AudioClip audio = new AudioClip(
-						getClass().getResource("../Pachet_aplicatie_resurse/Win.mp3").toExternalForm());
+				AudioClip audio = new AudioClip(getClass().getResource(this.getClass().getResource("/Pachet_aplicatie_resurse/Win.mp3").toExternalForm()).toExternalForm());
 				audio.setVolume(0.9f);
-
 				audio.play();
 				return null;
 			}
@@ -55,13 +49,10 @@ public class GameHelperSounds {
 	}
 
 //	public static void onWin() throws MediaException{
-//
 //		String musicFile2 = "C:\\Users\\Stefan\\ECLIPSE-workspace\\Proiect_IP\\src\\resurse\\Win.mp3";
 //		Media sound2 = new Media(new File(musicFile2).toURI().toString());
 //		MediaPlayer mediaPlayer2 = new MediaPlayer(sound2);
 //		mediaPlayer2.play();
-//
-//
 //	}
 
 }
