@@ -73,9 +73,9 @@ public class Build_IntroAPP extends Scena{
 		settingGame.setLayoutX(263);
 		settingGame.setLayoutY(225);
 		
-		startGame.setGraphic(new ImageView("file:C:\\Users\\Stefan\\git\\PROIECTE_IP_AN04\\src\\Pachet_aplicatie_resurse\\btnPlay.png"));
-		infoGame.setGraphic(new ImageView("file:C:\\Users\\Stefan\\git\\PROIECTE_IP_AN04\\src\\Pachet_aplicatie_resurse\\btnInfo.png"));
-		settingGame.setGraphic(new ImageView("file:C:\\Users\\Stefan\\git\\PROIECTE_IP_AN04\\src\\Pachet_aplicatie_resurse\\btnConfig.png"));	
+		startGame.setGraphic(new ImageView("/Pachet_aplicatie_resurse/btnPlay.png"));
+		infoGame.setGraphic(new ImageView("/Pachet_aplicatie_resurse/btnInfo.png"));
+		settingGame.setGraphic(new ImageView("/Pachet_aplicatie_resurse/btnConfig.png"));	
 		
 		Canvas canvas= Scena.addCanvasYellowBackground(THEME_COLOR_APP,true);
 		panelFinal.getChildren().add(canvas);
