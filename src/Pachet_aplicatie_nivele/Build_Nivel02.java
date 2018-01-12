@@ -60,7 +60,7 @@ public class Build_Nivel02  extends Scena{
 		Button btnRand2Coloana4  = new Button();
 		
 		btnRand1Coloana1.setStyle("-fx-color:"+"none"+"; -fx-border:none;");
-		btnRand1Coloana1.setGraphic(new ImageView("file:C:\\Users\\Stefan\\git\\PROIECTE_IP_AN04\\src\\Pachet_aplicatie_resurse\\lvl02a.png"));
+		btnRand1Coloana1.setGraphic(new ImageView("/Pachet_aplicatie_resurse/lvl02a.png"));
 		btnRand1Coloana1.setOnAction(e-> {
 			GameHelperSounds.onClickSound();
 			Canvas canvas= Scena.addCanvasYellowBackgroundNivel02(THEME_COLOR_APP,true,200,200);
@@ -73,7 +73,7 @@ public class Build_Nivel02  extends Scena{
 			checkWin(primaryStage,width, height, fill);
 			});
 		btnRand1Coloana2.setStyle("-fx-color:"+"none"+"; -fx-border:none;");
-		btnRand1Coloana2.setGraphic(new ImageView("file:C:\\Users\\Stefan\\git\\PROIECTE_IP_AN04\\src\\Pachet_aplicatie_resurse\\lvl02a.png"));
+		btnRand1Coloana2.setGraphic(new ImageView("/Pachet_aplicatie_resurse/lvl02a.png"));
 		btnRand1Coloana2.setOnAction(e-> {
 			GameHelperSounds.onClickSound();
 			Canvas canvas= Scena.addCanvasYellowBackgroundNivel02(THEME_COLOR_APP,true,200,200);
@@ -86,7 +86,7 @@ public class Build_Nivel02  extends Scena{
 			checkWin(primaryStage,width, height, fill);
 		});
 		btnRand1Coloana3.setStyle("-fx-color:"+"none"+"; -fx-border:none;");
-		btnRand1Coloana3.setGraphic(new ImageView("file:C:\\Users\\Stefan\\git\\PROIECTE_IP_AN04\\src\\Pachet_aplicatie_resurse\\lvl02a.png"));
+		btnRand1Coloana3.setGraphic(new ImageView("/Pachet_aplicatie_resurse/lvl02a.png"));
 		btnRand1Coloana3.setOnAction(e-> {
 			GameHelperSounds.onClickSound();
 			Canvas canvas= Scena.addCanvasYellowBackgroundNivel02(THEME_COLOR_APP,true,200,200);
@@ -99,7 +99,7 @@ public class Build_Nivel02  extends Scena{
 			checkWin(primaryStage,width, height, fill);
 		});
 		btnRand1Coloana4.setStyle("-fx-color:"+"none"+"; -fx-border:none;");
-		btnRand1Coloana4.setGraphic(new ImageView("file:C:\\Users\\Stefan\\git\\PROIECTE_IP_AN04\\src\\Pachet_aplicatie_resurse\\lvl02a.png"));
+		btnRand1Coloana4.setGraphic(new ImageView("/Pachet_aplicatie_resurse/lvl02a.png"));
 		btnRand1Coloana4.setOnAction(e-> {
 			GameHelperSounds.onClickSound();
 			Canvas canvas= Scena.addCanvasYellowBackgroundNivel02(THEME_COLOR_APP,true,200,200);
@@ -115,7 +115,7 @@ public class Build_Nivel02  extends Scena{
 		
 		
 		btnRand2Coloana1.setStyle("-fx-color:"+"none"+"; -fx-border:none;");
-		btnRand2Coloana1.setGraphic(new ImageView("file:C:\\Users\\Stefan\\git\\PROIECTE_IP_AN04\\src\\Pachet_aplicatie_resurse\\lvl02a.png"));
+		btnRand2Coloana1.setGraphic(new ImageView("/Pachet_aplicatie_resurse/lvl02a.png"));
 		btnRand2Coloana1.setOnAction(e-> {
 			GameHelperSounds.onClickSound();
 			Canvas canvas= Scena.addCanvasYellowBackgroundNivel02(THEME_COLOR_APP,true,200,200);
@@ -126,7 +126,7 @@ public class Build_Nivel02  extends Scena{
 			checkWin(primaryStage,width, height, fill);
 			});
 		btnRand2Coloana2.setStyle("-fx-color:"+"none"+"; -fx-border:none;");
-		btnRand2Coloana2.setGraphic(new ImageView("file:C:\\Users\\Stefan\\git\\PROIECTE_IP_AN04\\src\\Pachet_aplicatie_resurse\\lvl02a.png"));
+		btnRand2Coloana2.setGraphic(new ImageView("/Pachet_aplicatie_resurse/lvl02a.png"));
 		btnRand2Coloana2.setOnAction(e-> {
 			GameHelperSounds.onClickSound();
 			Canvas canvas= Scena.addCanvasYellowBackgroundNivel02(THEME_COLOR_APP,true,200,200);
@@ -137,7 +137,7 @@ public class Build_Nivel02  extends Scena{
 			checkWin(primaryStage,width, height, fill);
 			});
 		btnRand2Coloana3.setStyle("-fx-color:"+"none"+"; -fx-border:none;");
-		btnRand2Coloana3.setGraphic(new ImageView("file:C:\\Users\\Stefan\\git\\PROIECTE_IP_AN04\\src\\Pachet_aplicatie_resurse\\lvl02a.png"));
+		btnRand2Coloana3.setGraphic(new ImageView("/Pachet_aplicatie_resurse/lvl02a.png"));
 		btnRand2Coloana3.setOnAction(e-> {
 			GameHelperSounds.onClickSound();
 			Canvas canvas= Scena.addCanvasYellowBackgroundNivel02(THEME_COLOR_APP,true,200,200);
@@ -148,7 +148,7 @@ public class Build_Nivel02  extends Scena{
 			checkWin(primaryStage,width, height, fill);
 			});
 		btnRand2Coloana4.setStyle("-fx-color:"+"none"+"; -fx-border:none;");
-		btnRand2Coloana4.setGraphic(new ImageView("file:C:\\Users\\Stefan\\git\\PROIECTE_IP_AN04\\src\\Pachet_aplicatie_resurse\\lvl02a.png"));
+		btnRand2Coloana4.setGraphic(new ImageView("/Pachet_aplicatie_resurse/lvl02a.png"));
 		btnRand2Coloana4.setOnAction(e-> {
 			GameHelperSounds.onClickSound();
 			Canvas canvas= Scena.addCanvasYellowBackgroundNivel02(THEME_COLOR_APP,true,200,200);
