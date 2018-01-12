@@ -28,7 +28,10 @@ public class GameHelperSounds {
 
 	public static void onClickSound() {
 		
-		String musicFile2 = "C:\\Users\\Stefan\\git\\PROIECTE_IP_AN04\\src\\Pachet_aplicatie_resurse\\Click2.mp3";
+		String musicFile2 = "src/Pachet_aplicatie_resurse/Click2.mp3";
+		//If you are using eclipse, place your text file in the root of the project folder, outside the /src and /bin folders. It should be now accessible via a relative path directly.
+		//If you want to access a file in src folder, you have to append the /src/ prefix before the file path/name
+		
 		Media sound2 = new Media(new File(musicFile2).toURI().toString());
 		MediaPlayer mediaPlayer2 = new MediaPlayer(sound2);
 		mediaPlayer2.play();
