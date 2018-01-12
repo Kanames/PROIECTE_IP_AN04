@@ -2,6 +2,8 @@ package Pachet_aplicatie_nivele;
 
 import Pachet_aplicatie_data.GameHelper;
 import Pachet_aplicatie_data.GameHelperPosition;
+import Pachet_aplicatie_main.ContextAplicatie;
+import Pachet_aplicatie_main.INVOKEAppProperties;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -9,16 +11,17 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 
 public abstract class Scena extends Scene{
+	
+	static ContextAplicatie APP_INFO      = INVOKEAppProperties.contextAplicatieProcessed();
+	private static String THEME_COLOR_APP = APP_INFO.getThemeColor();
 	
 	public Scena(Parent root) {
 		super(root);
 	}
-
-	public Scena(Parent root, double width, double height, Paint fill) {
-		super(root, width, height, fill);
+	public Scena(Parent root, double width, double height) {
+		super(root, width, height, Paint.valueOf(THEME_COLOR_APP));
 	}
 
 	protected static Canvas addCanvasYellowBackground(String themeColorTxt,Boolean wantedText) {

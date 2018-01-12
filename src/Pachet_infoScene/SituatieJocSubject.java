@@ -1,7 +1,6 @@
-package Pachet_aplicatie_nivele;
+package Pachet_infoScene;
 
 import java.util.ArrayList;
-import java.util.Observer;
 
 public class SituatieJocSubject implements ISubject{
 	
@@ -40,14 +39,24 @@ public class SituatieJocSubject implements ISubject{
 			observer.update(nrCastiguri == null ? 0 : nrCastiguri,numeNivel);
 		}
 	}
-	
-	public void setNumeNivel(String numeNivel){
-		this.numeNivel = numeNivel;
+
+	public static String getNumeNivel() {
+		return numeNivel;
+	}
+
+	public static void setNumeNivel(String numeNivel) {
+		SituatieJocSubject.numeNivel = numeNivel;
+	}
+
+	public static Long getNrCastiguri() {
+		return nrCastiguri;
+	}
+
+	public static void setNrCastiguri(Long nrCastiguri) {
+		SituatieJocSubject.nrCastiguri = nrCastiguri;
 	}
 	
-	public void setNrCastiguri(Long nrCastiguri){
-		this.nrCastiguri = nrCastiguri;
-	}
+	
 
 
 }

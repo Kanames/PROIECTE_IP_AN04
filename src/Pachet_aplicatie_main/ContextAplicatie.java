@@ -9,6 +9,9 @@ public class ContextAplicatie {
 	private String  ThemeColor;
 	private static ContextAplicatie instance = null;
 
+	private int nrButoanePerRandNivel02;
+	private int nrRanduriNivel02;
+	
 	public ContextAplicatie() {
 		// Exists only to defeat instantiation.
 	}
@@ -63,6 +66,22 @@ public class ContextAplicatie {
 
 	public void setThemeColor(String themeColor) {
 		ThemeColor = themeColor;
+	}
+
+	public int getNrRanduriNivel02() {
+		return nrRanduriNivel02;
+	}
+
+	public void setNrRanduriNivel02(int nrRanduriNivel02) {
+		this.nrRanduriNivel02 = nrRanduriNivel02;
+	}
+
+	public int getNrButoanePerRandNivel02() {
+		return nrButoanePerRandNivel02;
+	}
+
+	public void setNrButoanePerRandNivel02(int nrButoanePerRandNivel02) {
+		this.nrButoanePerRandNivel02 = nrButoanePerRandNivel02;
 	}
 
 	

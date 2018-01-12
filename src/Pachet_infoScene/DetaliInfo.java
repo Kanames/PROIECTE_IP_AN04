@@ -1,4 +1,4 @@
-package Pachet_aplicatie_nivele;
+package Pachet_infoScene;
 
 public class DetaliInfo {
 	private Long 	nrCatiguriNivel;

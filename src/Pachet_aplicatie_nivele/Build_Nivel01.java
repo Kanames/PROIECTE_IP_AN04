@@ -2,6 +2,7 @@ package Pachet_aplicatie_nivele;
 
 import Pachet_aplicatie_data.GameHelperSounds;
 import Pachet_aplicatie_main.IMainApplication;
+import Pachet_aplicatie_main.INVOKEAppProperties;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -14,8 +15,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.MediaException;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class Build_Nivel01  extends Scena{
@@ -26,17 +25,17 @@ public class Build_Nivel01  extends Scena{
 	static Color colorBackgroundLvl01;
 
 	
-	public Build_Nivel01(Parent root, double width, double height, Paint fill) {
-		super(root, width, height, fill);
+	public Build_Nivel01(Parent root, double width, double height) {
+		super(root, width, height);
 		// TODO Auto-generated constructor stub
 	}
 	
-	public static Scene setting(Pane root, double width, double height, Paint fill, Stage primaryStage) {
+	public static Scene setting(Pane root, double width, double height) {
 		System.out.println("<<< IN Build_Nivel01() >>>");
 
 		Button btnYellow = new Button();
 		//btn IMG este 170x170
-		btnYellow.setGraphic(new ImageView("file:C:\\Users\\Stefan\\git\\PROIECTE_IP_AN04\\src\\Pachet_aplicatie_resurse\\lvl01a.png"));	
+		btnYellow.setGraphic(new ImageView("/Pachet_aplicatie_resurse/lvl01a.png"));	
 		btnYellow.setStyle("-fx-color:"+"none"+"; -fx-border:none;");
 		btnYellow.setLayoutX(315);
 		btnYellow.setLayoutY(115);
@@ -52,7 +51,7 @@ public class Build_Nivel01  extends Scena{
 				try {
 					GameHelperSounds.onWin();
 				}catch(MediaException mex) {
-					System.out.println("RezolvarePosibila: Verifica daca formatele la fisierele mp3/wav/ sunt bune si apoi verifica si path-ul la fiecare");
+					System.out.println(INVOKEAppProperties.MediaException_01);
 				}
 				btnYellow.setDisable(true);
 				i = 1;
@@ -61,7 +60,7 @@ public class Build_Nivel01  extends Scena{
 				IMainApplication.situatieJocS.notifyObserver();
 				System.out.println("<<<<<<<<<<<<<ObserverPattern>>>>>>>>>>>>>");
 				
-				primaryStage.setScene(NivelFactory.creazaScena("Level02", null, width, height, fill, primaryStage));
+				NivelFactory.creazaScena("Level02", null, width, height);
 				
 			}else {
 				
@@ -73,11 +72,12 @@ public class Build_Nivel01  extends Scena{
 		});
 		
 		decriseYellow(scene);
-		primaryStage.setScene(scene);
+		System.out.println("<<< out Build_Nivel01() >>>");
 		return scene;
 	}
 	
 	private static void decriseYellow(Scene scene) {
+		System.out.println("<<< IN Build_Nivel01.decriseYellow() >>>");
 		fiveSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
 		    @Override
 		    public void handle(ActionEvent event) {
@@ -92,6 +92,7 @@ public class Build_Nivel01  extends Scena{
 		}));
 		fiveSecondsWonder.setCycleCount(Timeline.INDEFINITE);
 		fiveSecondsWonder.play();
+		System.out.println("<<< IN Build_Nivel01.decriseYellow() >>>");
 	}
 
 }

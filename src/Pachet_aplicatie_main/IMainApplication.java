@@ -2,59 +2,44 @@ package Pachet_aplicatie_main;
 import Pachet_aplicatie_data.GameHelperSounds;
 import Pachet_aplicatie_nivele.Build_InfoAPP;
 import Pachet_aplicatie_nivele.NivelFactory;
-import Pachet_aplicatie_nivele.SituatieJocObserver;
-import Pachet_aplicatie_nivele.SituatieJocSubject;
+import Pachet_infoScene.SituatieJocObserver;
+import Pachet_infoScene.SituatieJocSubject;
 import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
 public class IMainApplication extends Application{
 	
-	static ContextAplicatie APP_INFO      = INVOKEAppProperties.contextAplicatieProcessed();
+	static ContextAplicatie APP_INFO      = INVOKEAppProperties.contextAplicatieProcessed(); //Pattern:SINGLETON
 	private static String NUME_APP        = APP_INFO.getNumeApp();
-	private static String THEME_COLOR_APP = APP_INFO.getThemeColor();
 	private static String ICON_URL_APP    = APP_INFO.getIconURL();
 	public static SituatieJocSubject situatieJocS;
-	
-	
+	public static Stage primaryStageAPP;
 	//EXAMEN 25 (2018)
-	static Button btnYellow,startGame,infoGame,settingGame;
-	Scene configAPPScene;
-	Color c1;
-	Boolean win = false;
-	double i = 1;
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}
-	
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		System.out.println("<<< IN IMainApplication.start() >>>");
-		
+		primaryStageAPP = primaryStage;
+		primaryStageAPP.setTitle(NUME_APP);
+		primaryStageAPP.getIcons().add(new Image(ICON_URL_APP));
+	
+		//Pattern:OBSERVER
 		situatieJocS = new SituatieJocSubject();
 		Build_InfoAPP.situatieJocO = new SituatieJocObserver(situatieJocS);
 		situatieJocS.register(Build_InfoAPP.situatieJocO);
-		
-		primaryStage.setTitle(NUME_APP);
-		
-		//Scena 1 Intro applicatie 
-		Scene sceneIntro = NivelFactory.creazaScena("Intro", null, 800, 400, Paint.valueOf(THEME_COLOR_APP),primaryStage);
-		GameHelperSounds.playBackgroundSound();
+		//prezinta: ultimul nivel jucat, de cate ori sa terminat jocul per asamblu, numele user-ului.
 
+		//Scena 1 "Intro" applicatie 
+		NivelFactory.creazaScena("Intro", null, 800, 400);
+		GameHelperSounds.playBackgroundSound();
 		
-		
-		//-- finale
-		primaryStage.getIcons().add(new Image(ICON_URL_APP));
-		primaryStage.setScene(sceneIntro);
-		primaryStage.show();
-		
-		
+		primaryStageAPP.show();
 		System.out.println("<<< OUT IMainApplication.start() >>>");
 	}
 
