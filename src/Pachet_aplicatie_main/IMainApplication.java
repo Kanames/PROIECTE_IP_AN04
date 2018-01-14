@@ -1,6 +1,4 @@
 package Pachet_aplicatie_main;
-import java.io.File;
-
 import Pachet_aplicatie_data.GameHelperSounds;
 import Pachet_aplicatie_nivele.Build_InfoAPP;
 import Pachet_aplicatie_nivele.NivelFactory;
@@ -15,7 +13,6 @@ public class IMainApplication extends Application{
 	static ContextAplicatie APP_INFO      = INVOKEAppProperties.contextAplicatieProcessed(); //Pattern:SINGLETON
 	private static String NUME_APP        = APP_INFO.getNumeApp();
 	private static String ICON_URL_APP    = APP_INFO.getIconURL();
-	Log4Debug log = Log4Debug.getInstance();
 	public static SituatieJocSubject situatieJocS;
 	public static Stage primaryStageAPP;
 	//EXAMEN 25 (2018)

@@ -56,7 +56,4 @@ public class SituatieJocSubject implements ISubject{
 		SituatieJocSubject.nrCastiguri = nrCastiguri;
 	}
 	
-	
-
-
 }
