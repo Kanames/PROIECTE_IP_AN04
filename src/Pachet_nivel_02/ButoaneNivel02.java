@@ -7,9 +7,11 @@ import Pachet_aplicatie_data.GameHelperPosition;
 import javafx.scene.layout.Pane;
 
 public class ButoaneNivel02 implements IButoaneNivel02{
+	
     public static ArrayList<ButtonNivel02Implementare> butoaneNivel02;
     private int rows = 0 ;
     private int btnsPerRow = 0;
+    
     @Override
     public IteratorButoane getIterator(Pane panelFinal){
         butoaneNivel02 = new ArrayList<ButtonNivel02Implementare>();

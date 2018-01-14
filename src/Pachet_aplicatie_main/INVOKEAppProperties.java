@@ -1,6 +1,13 @@
 package Pachet_aplicatie_main;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import Pachet_aplicatie_data.GameHelper;
 
@@ -10,11 +17,26 @@ public class INVOKEAppProperties {
 	public static int COLOR_COMPONENT_G;
 	public static int COLOR_COMPONENT_B;
 	
-	public static ContextAplicatie contextAplicatieProcessed() {
+	public static ContextAplicatie contextAplicatieProcessed(){
 		ContextAplicatie appInfo = ContextAplicatie.getInstance();
 		appInfo.setNumeApp("Yellow");
 		appInfo.setIconURL("/Pachet_aplicatie_resurse/yellowIcon.png");
 		appInfo.setThemeColor("YELLOW");
+		
+		DateFormat dateFormat = new SimpleDateFormat("yyyy_MM_dd");
+		Date  cal = new Date();
+		String dateFile = dateFormat.format(cal).toString();
+		
+		File yourFile = new File("src/Pachet_aplicatie_debugging/"+dateFile+"_log.txt");
+		try {
+			System.out.println("");
+			yourFile.createNewFile();
+			FileOutputStream oFile = new FileOutputStream(yourFile, false); 
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} // if file already exists will do nothing 
+		appInfo.setLogURL("src/Pachet_aplicatie_debugging/"+dateFile+"_log.txt");
 		
 		ArrayList<String> rgb = GameHelper.creatingRGBfromWord(appInfo.getThemeColor());
 		COLOR_COMPONENT_R = Integer.valueOf((String) rgb.get(0));

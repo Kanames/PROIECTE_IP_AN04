@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.Line;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
@@ -74,6 +75,32 @@ public class Build_InfoAPP extends Scena{
 		panelFinal.getChildren().add(numeUser);
 		
 
+		Line linesus = new Line();
+		linesus.setStartX(10);
+		linesus.setStartY(10);
+		linesus.setEndX(790);
+		linesus.setEndY(10);
+        panelFinal.getChildren().add(linesus);
+        Line linedreapta = new Line();
+        linedreapta.setStartX(790);
+        linedreapta.setStartY(10);
+		linedreapta.setEndX(790);
+		linedreapta.setEndY(390);
+        panelFinal.getChildren().add(linedreapta);
+        Line linejos = new Line();
+        linejos.setStartX(790);
+        linejos.setStartY(390);
+        linejos.setEndX(10);
+		linejos.setEndY(390);
+        panelFinal.getChildren().add(linejos);
+        Line linestanga = new Line();
+        linestanga.setStartX(10);
+        linestanga.setStartY(390);
+        linestanga.setEndX(10);
+        linestanga.setEndY(10);
+        panelFinal.getChildren().add(linestanga);
+		
+        
 		Scena scenaFinala =  new Build_IntroAPP(panelFinal);
 		System.out.println("<<< OUT Build_IntroAPP() >>>");
 		return scenaFinala;

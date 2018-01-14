@@ -7,16 +7,28 @@ import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
+
+
 public class GameHelperSounds {
+	public static double volumeBackground;
+	public static boolean configON = false;
+	private static AudioClip audioBackGround ;
+	public static void OnValueChangedBackground (){
+		System.out.println("aici! volumeBackground: "+volumeBackground+"     configON:"+configON);
+		audioBackGround.setVolume(configON == false? 0.5 : volumeBackground);
+		audioBackGround.stop();
+		audioBackGround.play();
+	 }
+	
 	public static void playBackgroundSound() {
 		final Task task = new Task() {
 			@Override
 			protected Object call() throws Exception {
 				int repeatSong = 3;
-				AudioClip audio = new AudioClip(this.getClass().getResource("/Pachet_aplicatie_resurse/Background (2).mp3").toExternalForm());
-				audio.setVolume(0.8f);
-				audio.setCycleCount(repeatSong);
-				audio.play();
+				audioBackGround  = new AudioClip(this.getClass().getResource("/Pachet_aplicatie_resurse/Background (2).mp3").toExternalForm());
+				audioBackGround.setVolume(configON == false? 0.5 : volumeBackground);
+				audioBackGround.setCycleCount(repeatSong);
+				audioBackGround.play();
 				return null;
 			}
 		};

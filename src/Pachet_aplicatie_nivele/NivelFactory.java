@@ -37,14 +37,15 @@ public class NivelFactory {
 		}
 		else if(tipScena.equalsIgnoreCase("Level02")) {
 			System.out.println("<< Intrat in IF case good(Level02)");
-			IMainApplication.situatieJocS.setNumeNivel("Nivel 02");
-			IMainApplication.situatieJocS.setNrCastiguri(++nrCastiguri);
+			SituatieJocSubject.setNumeNivel("Nivel 02");
 			tipScenaDorit = Build_Nivel02.setting(root);
 			System.out.println("<< Iesit din IF(Level02)");
 		}
 		else if(tipScena.equalsIgnoreCase("Level03")) {
 			System.out.println("<< Intrat in IF case good(Level03)");
-			IMainApplication.situatieJocS.setNumeNivel("Nivel 03");
+			SituatieJocSubject.setNumeNivel("Nivel 03");
+			SituatieJocSubject.setNrCastiguri(++nrCastiguri);
+			tipScenaDorit = Build_Nivel03.setting(root);
 			System.out.println("<< Iesit din IF(Level03)");
 		}
 		System.out.println("<<< OUT NivelFactory-alegerea scena >>>");

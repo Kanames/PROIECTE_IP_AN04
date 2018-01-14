@@ -72,7 +72,7 @@ public class Build_Nivel02  extends Scena{
 			
 			GameHelperSounds.onWin();
 			nrOfBoxexCheck = 0;
-			NivelFactory.creazaScena("Intro", null);
+			NivelFactory.creazaScena("Level03", null);
 			
 			
 		}
