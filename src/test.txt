@@ -41,3 +41,62 @@ public void testCompositeObject() throws Exception{
   }
 }
 //------------------------------------------------------------------------------
+
+
+
+//--------------------------------------------------------------------------------------------------------------------
+@Test
+public void testIteratorObject2() throws Exception{
+  logger.info("<<<Testing iterator object 2>>>");
+  IteratorButoane itBtns = new IteratorButoane();
+  if(itBtns istanceof IIteratorNivel02){
+    logger.info("itBtns istanceof IIteratorNivel02 -> TRUE");
+  }
+}
+//------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
+@Test
+public void testCalcularePozitiObiecteNivel02() throws Exception{
+ ArrayList<String> listaPozitiObiecte = GameHelperPosition.calcularePozitiNivel02(800,400,2,4);
+ for(int i = 0 ; i < listaPozitiObiecte.size() ; i ++){
+    System.out.println(listaPozitiObiecte.get(i));
+ }
+}
+//------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
+@Test
+public void testCalcularePozitiObiecteNivel02() throws Exception{
+  int width = 800;
+  int height = 400;
+  String element = "RED";
+  System.out.println("X= "+GameHelperPosition.calcXNameApp(width));
+  System.out.println("Y= "+GameHelperPosition.calcYNameApp(height,element));
+}
+//------------------------------------------------------------------------------
+
+
+//------------------------------------------------------------------------------
+@Test
+public void testObserverObject2() throws Exception{
+ SituatieJocSubject situatieJocSubject = new SituatieJocSubject();
+ if(situatieJocSubject instaceof ISubject){
+    logger.info("situatieJocSubject instaceof ISubject -> TRUE");
+ }
+}
+//------------------------------------------------------------------------------
+
+
+//------------------------------------------------------------------------------
+@Test
+public void testContextAplicatie(){
+ ContextAplicatie APP_INFO = INVOKEAppProperties.contextAplicatieProcessed();
+ System.out.println("Nume APP: "+APP_INFO.getThemeColor());
+ System.out.println("Icon APP: "+APP_INFO.getIconURL());
+ System.out.println("Lungime APP: "+APP_INFO.getLungimeAplicatie());
+ System.out.println("Latime APP: "+APP_INFO.getLatimeAplicatie());
+}
+//------------------------------------------------------------------------------
+
+
