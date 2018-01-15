@@ -1,0 +1,43 @@
+private static final int NR_OF_ROWS = 2;
+private static final int NR_OF_BTNS_PER_ROW = 10;
+
+//------------------------------------------------------------------------------
+@Test
+public void testIteratorObject() throws Exception{
+  logger.info("<<<Testing iterator object>>>");
+  ButoaneNivel02 btnGenerator = new ButoaneNivel02();
+  btnGenerator.setNumberOfRows(NR_OF_ROWS);
+  btnGenerator.setNumberOfButtonsPerRow(NR_OF_BTNS_PER_ROW);
+  if(btnGenerator istanceof IButoaneNivel02){
+    logger.info("btnGenerator istanceof IButoaneNivel02 -> TRUE");
+  }
+}
+//------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
+@Test
+public void testObserverObject() throws Exception{
+  logger.info("<<<Testing observer object>>>");
+  logger.info("Crearea de 3 obiecte de tipul SituatieJocObserver");
+  SituatieJocObserver situatieJocObserver1 = new SituatieJocObserver(new ISubject(){});
+  SituatieJocObserver situatieJocObserver2 = new SituatieJocObserver(new ISubject(){});
+  SituatieJocObserver situatieJocObserver3 = new SituatieJocObserver(new ISubject(){});
+  if(situatieJocObserver1 istanceof IObserver){
+    logger.info("situatieJocObserver1 istanceof IObserver -> TRUE");
+  }
+}
+//------------------------------------------------------------------------------
+
+
+//------------------------------------------------------------------------------
+@Test
+public void testCompositeObject() throws Exception{
+  logger.info("<<<Testing composite object>>>");
+  int cadreCerute = 2;
+  Cadru cadru = new Cadru(cadreCerute);
+  List<Rectangle> listaCadre = cadru.getCadre();
+  if(listaCadre.size() == cadreCerute){
+    logger.info("Lista de cadre cerute si primite sunt egale !");
+  }
+}
+//------------------------------------------------------------------------------
